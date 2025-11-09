@@ -42,11 +42,18 @@ public class SecurityConfig {
                         .accessDeniedHandler(customAccessDeniedHandler)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        // Allow access to Swagger UI and API docs without authentication
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/api-docs/**"
+                        ).permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/users/register").permitAll()
                         .requestMatchers("/api/v1/internal/**").hasAuthority("ROLE_INTERNAL_SERVICE")
-                        .requestMatchers("/api/v1/profiles/**").hasAuthority("ROLE_INTERNAL_SERVICE") // Manter esta regra
+                        .requestMatchers("/api/v1/profiles/**").hasAuthority("ROLE_INTERNAL_SERVICE")
                         .requestMatchers("/api/v1/users/admin/**").hasRole("ADMIN")
+                        // Need authentication for any other request
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)

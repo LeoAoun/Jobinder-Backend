@@ -2,7 +2,6 @@ package br.com.jobinder.identityservice.controller;
 
 import br.com.jobinder.identityservice.dto.serviceprofile.ServiceProfileCreateDTO;
 import br.com.jobinder.identityservice.dto.serviceprofile.ServiceProfileResponseDTO;
-import br.com.jobinder.identityservice.dto.user.ProfileUserDTO;
 import br.com.jobinder.identityservice.service.ServiceProfileService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,9 @@ public class ServiceProfileController {
     }
 
     @GetMapping("/{profileId}/user")
-    public ResponseEntity<ProfileUserDTO> getUserIdByServiceProfileId(@PathVariable UUID profileId) {
-        var userId = serviceProfileService.findUserIdByServiceProfileId(profileId);
-        return ResponseEntity.ok(new ProfileUserDTO(userId));
+    public ResponseEntity<UUID> getUserIdByServiceProfileId(@PathVariable UUID serviceProfileId) {
+        var userId = serviceProfileService.findUserIdByServiceProfileId(serviceProfileId);
+        return ResponseEntity.ok(userId);
     }
 
     /*

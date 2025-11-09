@@ -1,4 +1,4 @@
-package br.com.jobinder.identityservice.domain.service_profile;
+package br.com.jobinder.identityservice.domain.serviceprofile;
 
 import br.com.jobinder.identityservice.domain.location.Location;
 import br.com.jobinder.identityservice.domain.specialty.Specialty;

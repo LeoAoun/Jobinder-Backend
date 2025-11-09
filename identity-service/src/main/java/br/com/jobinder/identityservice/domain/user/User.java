@@ -62,19 +62,14 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        // Retorna o campo que será usado como "username" para o login.
-        // No nosso caso, é o número de telefone.
         return this.phone;
     }
 
-    // O @Getter do Lombok já cria o getPassword(), mas é bom saber que ele é usado aqui.
     @Override
     public String getPassword() {
         return this.password;
     }
 
-    // Para simplificar, retornamos 'true' para os métodos de status da conta.
-    // Em um sistema real, você poderia ter colunas no banco para controlar isso.
     @Override
     public boolean isAccountNonExpired() {
         return true;

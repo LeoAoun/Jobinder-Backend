@@ -2,6 +2,7 @@ package br.com.jobinder.identityservice.infra.exception;
 
 import br.com.jobinder.identityservice.infra.exception.serviceprofile.ServiceProfileAlreadyExistsException;
 import br.com.jobinder.identityservice.infra.exception.serviceprofile.ServiceProfileNotFoundException;
+import br.com.jobinder.identityservice.infra.exception.user.InvalidPasswordException;
 import br.com.jobinder.identityservice.infra.exception.user.PhoneNumberInvalidException;
 import br.com.jobinder.identityservice.infra.exception.user.UserAlreadyExistsException;
 import br.com.jobinder.identityservice.infra.exception.user.UserNotFoundException;
@@ -60,5 +61,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ServiceProfileAlreadyExistsException.class)
     public ResponseEntity<Map<String, String>> handleProfileAlreadyExists(ServiceProfileAlreadyExistsException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
+    }
+
+    // Handle invalid password error
+    @ExceptionHandler(InvalidPasswordException.class)
+    public ResponseEntity<Map<String, String>> handleInvalidPassword(InvalidPasswordException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
     }
 }

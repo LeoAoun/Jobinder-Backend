@@ -1,4 +1,4 @@
-package br.com.jobinder.identityservice.domain.service_profile;
+package br.com.jobinder.identityservice.domain.serviceprofile;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

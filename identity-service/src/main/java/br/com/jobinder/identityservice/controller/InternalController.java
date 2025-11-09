@@ -1,6 +1,6 @@
 package br.com.jobinder.identityservice.controller;
 
-import br.com.jobinder.identityservice.dto.user.InternalUserAuthDTO;
+import br.com.jobinder.identityservice.dto.internal.InternalUserAuthDTO;
 import br.com.jobinder.identityservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

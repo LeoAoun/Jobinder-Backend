@@ -1,4 +1,4 @@
-package br.com.jobinder.identityservice.dto.user;
+package br.com.jobinder.identityservice.dto.internal;
 
 import jakarta.validation.constraints.NotBlank;
 

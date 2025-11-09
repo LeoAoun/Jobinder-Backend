@@ -1,7 +1,7 @@
 package br.com.jobinder.identityservice.service;
 
-import br.com.jobinder.identityservice.domain.service_profile.ServiceProfile;
-import br.com.jobinder.identityservice.domain.service_profile.ServiceProfileRepository;
+import br.com.jobinder.identityservice.domain.serviceprofile.ServiceProfile;
+import br.com.jobinder.identityservice.domain.serviceprofile.ServiceProfileRepository;
 import br.com.jobinder.identityservice.domain.user.UserRepository;
 import br.com.jobinder.identityservice.dto.serviceprofile.ServiceProfileCreateDTO;
 import br.com.jobinder.identityservice.dto.serviceprofile.ServiceProfileResponseDTO;
