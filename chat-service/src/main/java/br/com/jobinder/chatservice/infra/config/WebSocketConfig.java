@@ -1,4 +1,4 @@
-package br.com.jobinder.chatservice.config;
+package br.com.jobinder.chatservice.infra.config;
 
 import br.com.jobinder.chatservice.handler.ChatWebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;

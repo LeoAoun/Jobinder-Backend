@@ -18,6 +18,7 @@ public class ConversationService {
     @Autowired
     private ConversationRepository conversationRepository;
 
+    @Transactional
     public Conversation createConversation(MatchCreatedEvent event) {
         if (conversationRepository.existsByMatchId(event.matchId())) {
             return conversationRepository.findByMatchId(event.matchId()).orElse(null);

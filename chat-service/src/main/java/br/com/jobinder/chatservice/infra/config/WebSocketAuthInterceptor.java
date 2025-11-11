@@ -1,4 +1,4 @@
-package br.com.jobinder.chatservice.config;
+package br.com.jobinder.chatservice.infra.config;
 
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;

@@ -1,4 +1,4 @@
-package br.com.jobinder.chatservice.config;
+package br.com.jobinder.chatservice.infra.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,15 +17,16 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+                        // Allow access to Swagger UI and API docs without authentication
                         .requestMatchers(
-                                "/ws/chat/**",
                                 "/swagger-ui/**",
+                                "/swagger-ui.html",
                                 "/v3/api-docs/**",
+                                "/api-docs/**",
                                 "/api/v1/conversations/**",
                                 "/api/v1/messages/**"
                         ).permitAll()
-
-                        // Needs authentication for any other requests
+                        // Need authentication for any other request
                         .anyRequest().authenticated()
                 )
                 // TODO: JWT token filter
