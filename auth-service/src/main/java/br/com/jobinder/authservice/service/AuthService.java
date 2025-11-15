@@ -26,7 +26,6 @@ public class AuthService {
         // Call the Identity Service to get user details by phone number
         InternalUserAuthDTO userDetails = identityServiceClient.getUserAuthDetails(loginRequest.phone());
 
-
         // Validate password
         if (!passwordEncoder.matches(loginRequest.password(), userDetails.hashedPassword())) {
             throw new InvalidCredentialsException("Invalid phone number or password.");
